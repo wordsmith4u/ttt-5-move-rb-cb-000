@@ -37,12 +37,12 @@ describe './lib/move.rb' do
       expect(board).to eq([" ", " ", " ", " ", " ", " ", " ", " ", "X"])
     end
 
-    it 'allows "X" player in the bottom right and "O" in the top left ' do
+    it 'allows "O" player in the bottom right and "X" in the top left ' do
       board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-      move(board, 0, "O")
-      move(board, 8, "X")
+      move(board, 0, "X")
+      move(board, 8, "O")
 
-      expect(board).to eq(["O", " ", " ", " ", " ", " ", " ", " ", "X"])
+      expect(board).to eq(["X", " ", " ", " ", " ", " ", " ", " ", "O"])
     end
 
     it 'allows "X" to win diagonally' do
@@ -64,7 +64,7 @@ describe './lib/move.rb' do
       move(board, 5, "O")
       move(board, 6, "X")
       move(board, 7, "X")
-      move(board, 8, "O")      
+      move(board, 8, "O")
 
       expect(board).to eq(["X", "O", "X", "O", "X", "O", "X", "X", "O"])
     end
